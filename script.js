@@ -78,48 +78,4 @@ function deleteItem(index) {
 Afficher();
 
 
-// function FilterByMotif() {
-//   const filterValue = document.querySelector('#filterMotif').value;
-//   const rows = document.querySelectorAll('tbody tr');
 
-//   rows.forEach(row =>{
-//     const motif = row.cells[4];
-//     if (motif === filterValue){
-//       row.style.display ='';
-//     }
-//     else{
-//       row.style.display = 'none';
-//     }
-//   });
-// }
-
-
-
-
-
-
-
-
-
-
-// function searchPatient() {
-//   const search = document.querySelector("#searchInput").value.toLowercase();
-//   const rows = document.querySelectorAll("tbody tr");
-// }
-// rows.forEach((row) => {
-//   const nom = row.cells[0].textContent.toLowercase();
-//   const prenom = row.cells[1].textContent.toLowercase();
-//   const telephone = row.cells[2].textContent.toLowercase();
-//   const email = row.cells[3].textContent.toLowercase();
-//   if (
-//     nom.includes(searchValue) ||
-//     prenom.includes(searchValue) ||
-//     telephone.includes(searchValue) ||
-//     email.includes(searchValue)
-//   ) {
-//     row.style.display = "";
-//   } else {
-//     row.style.display = "none";
-//   }
-// });
-// updateCounter();
