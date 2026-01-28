@@ -10,7 +10,7 @@ const button = document.querySelector("#btn");
 const tablebody = document.querySelector("#tableauBody");
 const Ajouter = document.querySelector(".btn");
 let p = document.querySelector("#message");
-const form = document.querySelector("form");
+const form = document.querySelector(".top form");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -68,6 +68,7 @@ function Afficher() {
       tablebody.appendChild(tr);
     });
   }
+  updateCompteur();
 }
 
 function deleteItem(index) {
@@ -77,5 +78,43 @@ function deleteItem(index) {
 
 Afficher();
 
+function FilterByMotif() {
+  const filterValue = document.querySelector("#filterMotif").value;
+  const rows = document.querySelectorAll("tbody tr");
 
+  rows.forEach((row) => {
+    const motif = row.cells[4];
+    if (motif === filterValue) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+}
+//---Function rechercher---//
+function searchPatient() {
+  const search = document.querySelector("#searchInput").value;
+  myarray.forEach((el) => {
+    const nome = el.nome;
+    const prenom = el.prenom;
+    const email = el.email;
+    const tele = el.tele;
+    if (
+      nome.includes(search) ||
+      prenom.includes(search) ||
+      tele.includes(search) ||
+      email.includes(search)
+    ) {
+      myarray = myarray.filter(
+        (item) => item.nome === nome && item.prenom === prenom,
+      );
+      Afficher(myarray);
+    }
+  });
+}
 
+function updateCompteur() {
+  const total = myarray.length;
+  document.querySelector("#compteur").textContent = `${total} demande au total`;
+}
+updateCompteur();
