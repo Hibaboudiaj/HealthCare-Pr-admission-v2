@@ -12,6 +12,7 @@ const Ajouter = document.querySelector(".btn");
 let p = document.querySelector("#message");
 const form = document.querySelector(".top form");
 
+//---Function Ajouter start---//
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   let chek = {
@@ -39,7 +40,9 @@ form.addEventListener("submit", function (e) {
   }
   form.reset();
 });
+//---Function Ajouter ends---//
 
+//---Function Afficher start---//
 function Afficher() {
   tablebody.innerHTML = "";
   if (myarray.length == 0) {
@@ -70,18 +73,20 @@ function Afficher() {
   }
   updateCompteur();
 }
+//---Function Afficher ends---//
 
+//---Function delete start---//
 function deleteItem(index) {
   myarray.splice(index, 1);
   Afficher();
 }
-
 Afficher();
+//---Function delete ends---//
 
+//---Function FilterByMotif start---//
 function FilterByMotif() {
   const filterValue = document.querySelector("#filterMotif").value;
   const rows = document.querySelectorAll("tbody tr");
-
   rows.forEach((row) => {
     const motif = row.cells[4];
     if (motif === filterValue) {
@@ -91,7 +96,9 @@ function FilterByMotif() {
     }
   });
 }
-//---Function rechercher---//
+//---Function FilterByMotif ends---//
+
+//---Function rechercher start---//
 function searchPatient() {
   const search = document.querySelector("#searchInput").value;
   myarray.forEach((el) => {
@@ -106,15 +113,26 @@ function searchPatient() {
       email.includes(search)
     ) {
       myarray = myarray.filter(
-        (item) => item.nome === nome && item.prenom === prenom,
+        (element) =>
+          element.nome === nome ||
+          element.prenom === prenom ||
+          element.tele === tele ||
+          element.email === email,
       );
       Afficher(myarray);
     }
   });
 }
+document.querySelector(".search-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  searchPatient();
+});
+//---Function rechercher ends---//
 
+//---Function Compteur start---//
 function updateCompteur() {
   const total = myarray.length;
   document.querySelector("#compteur").textContent = `${total} demande au total`;
 }
 updateCompteur();
+//---Function Compteur ends---//

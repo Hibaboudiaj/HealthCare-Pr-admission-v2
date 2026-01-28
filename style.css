@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -246,6 +247,9 @@ td {
 
 .deleteBtn {
   cursor: pointer;
+}
+@media (max-width:768px){
+
 }
 
 #message {
