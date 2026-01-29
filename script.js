@@ -1,4 +1,33 @@
-let myarray = [];
+// let myarray = [];
+
+let myarray = [
+  {
+    nome: "Mohamed",
+    prenom: "Ali",
+    tele: "0551234567",
+    email: "mohamed.ali@test.com",
+    motif: "Consultation générale",
+    date: "2026-02-01",
+  },
+  {
+    nome: "Lina",
+    prenom: "Bensaid",
+    tele: "0669876543",
+    email: "lina.bensaid@test.com",
+    motif: "Contrôle annuel",
+    date: "2026-02-03",
+  },
+  {
+    nome: "Yacine",
+    prenom: "Cherif",
+    tele: "0774455667",
+    email: "yacine.cherif@test.com",
+    motif: "Urgence",
+    date: "2026-02-05",
+  }
+];
+
+
 
 const nameEl = document.querySelector("#name");
 const prenomEl = document.querySelector("#Prenom");
@@ -126,13 +155,14 @@ function searchPatient() {
 document.querySelector(".search-form").addEventListener("submit", (e) => {
   e.preventDefault();
   searchPatient();
+  Afficher();
 });
 //---Function rechercher ends---//
 
 //---Function Compteur start---//
 function updateCompteur() {
   const total = myarray.length;
-  document.querySelector("#compteur").textContent = `${total} demande au total`;
+  document.querySelector("#compteur").textContent = `${total} demande`;
 }
 updateCompteur();
 //---Function Compteur ends---//

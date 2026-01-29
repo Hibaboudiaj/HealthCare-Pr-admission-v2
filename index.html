@@ -15,96 +15,90 @@
     <!--header section starts-->
     <header class="header">
       <h4>PatientHub</h4>
-      <div>
-        <p id="compteur"></p>
-      </div>
-      <div class="search-container">
-        <form class="search-form">
-          <input
-            class="search"
-            type="text"
-            id="searchInput"
-            placeholder=" Rechercher un patient..."
-          />
-        </form>
-        <select id="filterMotif" class="select">
-          <option value="Controle">Contrôle</option>
-          <option value="consultation">Consultation</option>
-          <option value="Urgences">Service des urgences</option>
-          <option value="maternite">Service de maternité</option>
-          <option value="pédiatrie">Service de pédiatrie</option>
-        </select>
-      </div>
     </header>
     <!--header section ends-->
-    <div class="container">
-      <!--section 1 starts-->
-      <div class="top">
-        <form>
-          <h2>Remplir le Formulaire</h2>
-          <div>
-            <div class="Formulaire">
-              <label>Nom :</label>
-              <input id="name" type="text" placeholder="Entrer votre nom" />
-            </div>
-            <div class="Formulaire">
-              <label>Prenom :</label>
-              <input
-                id="Prenom"
-                type="text"
-                placeholder="Entrer votre Prenom"
-              />
-            </div>
-            <div class="Formulaire">
-              <label>N*Telephone :</label>
-              <input id="tele" type="tel" placeholder="06 . . . . . . . ." />
-            </div>
-            <div class="Formulaire">
-              <label>E-mail :</label>
-              <input id="Email" type="email" placeholder="Exemple@gmail.com" />
-            </div>
-            <div class="Formulaire">
-              <label>Motif :</label>
-              <input
-                id="Motif"
-                type="text"
-                placeholder="consultation /Urgence..."
-              />
-            </div>
-            <div class="Formulaire">
-              <label>Date :</label>
-              <input id="Date" type="date" />
-            </div>
-            <div class="Formulaire center">
-              <button class="btn" type="submit">Entrer</button>
-              <div id="message"></div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!--section 1 ends-->
 
-      <!--section 2 starts-->
-      <div class="bottom">
-        <p class="table-title">Liste des Patients</p>
-        <table id="tableau">
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Prenom</th>
-              <th>N*Telephone</th>
-              <th>E-mail</th>
-              <th>Motif</th>
-              <th>Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="tableauBody"></tbody>
-        </table>
-      </div>
-      <!--section 2 ends-->
+    <!--section 1 starts-->
+    <div class="top">
+      <form>
+        <h2>Remplir le Formulaire</h2>
+        <div class="form-con">
+          <div class="Formulaire">
+            <label>Nom :</label>
+            <input id="name" type="text" placeholder="Entrer votre nom" />
+          </div>
+          <div class="Formulaire">
+            <label>Prenom :</label>
+            <input id="Prenom" type="text" placeholder="Entrer votre Prenom" />
+          </div>
+          <div class="Formulaire">
+            <label>N*Telephone :</label>
+            <input id="tele" type="tel" placeholder="06 . . . . . . . ." />
+          </div>
+          <div class="Formulaire">
+            <label>E-mail :</label>
+            <input id="Email" type="email" placeholder="Exemple@gmail.com" />
+          </div>
+          <div class="Formulaire">
+            <label>Motif :</label>
+            <input
+              id="Motif"
+              type="text"
+              placeholder="consultation /Urgence..."
+            />
+          </div>
+          <div class="Formulaire">
+            <label>Date :</label>
+            <input id="Date" type="date" />
+          </div>
+          <div class="Formulaire center">
+            <button class="btn" type="submit">Entrer</button>
+            <div id="message"></div>
+          </div>
+        </div>
+      </form>
     </div>
-    >
+    <!--section 1 ends-->
+
+    <section>
+      <di></di>
+      <div></div>
+    </section>
+
+    <!--section 2 starts-->
+    <div class="bottom">
+      <section class="head-box">
+        <div>
+          <p id="compteur"></p>
+        </div>
+        <div>
+          <form class="search-form">
+            <input
+              class="search"
+              type="text"
+              id="searchInput"
+              placeholder=" Rechercher un patient..."
+            />
+          </form>
+        </div>
+      </section>
+
+      <table id="tableau">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>N*Telephone</th>
+            <th>E-mail</th>
+            <th>Motif</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableauBody"></tbody>
+      </table>
+    </div>
+    <!--section 2 ends-->
     <script src="script.js"></script>
   </body>
 </html>
