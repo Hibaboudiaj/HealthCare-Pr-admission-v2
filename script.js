@@ -27,8 +27,6 @@ let myarray = [
   }
 ];
 
-
-
 const nameEl = document.querySelector("#name");
 const prenomEl = document.querySelector("#Prenom");
 const teleEl = document.querySelector("#tele");
@@ -113,18 +111,18 @@ Afficher();
 //---Function delete ends---//
 
 //---Function FilterByMotif start---//
-function FilterByMotif() {
-  const filterValue = document.querySelector("#filterMotif").value;
-  const rows = document.querySelectorAll("tbody tr");
-  rows.forEach((row) => {
-    const motif = row.cells[4];
-    if (motif === filterValue) {
-      row.style.display = "";
-    } else {
-      row.style.display = "none";
-    }
-  });
-}
+// function FilterByMotif() {
+//   const filterValue = document.querySelector("#filterMotif").value;
+//   const rows = document.querySelectorAll("tbody tr");
+//   rows.forEach((row) => {
+//     const motif = row.cells[4];
+//     if (motif === filterValue) {
+//       row.style.display = "";
+//     } else {
+//       row.style.display = "none";
+//     }
+//   });
+// }
 //---Function FilterByMotif ends---//
 
 //---Function rechercher start---//

@@ -259,14 +259,14 @@ td {
     height: auto;
   }
   .top form {
-    width: 80% !important; 
+    width: 80% !important;
     max-width: 400px;
   }
   .search-container {
     display: flex;
     justify-content: center;
   }
-  .top form{
+  .top form {
     width: 80% !important;
     min-height: 60vh;
   }
@@ -283,11 +283,47 @@ td {
     overflow-x: auto;
     margin-top: 30px;
   }
-  th, td {
+  th,
+  td {
     padding: 12px 8px;
     font-size: 13px;
   }
-  table{
+  table {
     min-width: 700px;
+  }
+}
+/* Responsive tablet */
+@media (min-width: 677px) and (max-width: 1024px) {
+  .top {
+    min-height: 37em;
+  }
+  .bottom{
+    height: 48em;
+  }
+  .top form {
+    width: 60%;
+    max-width: 400px;
+  }
+  .head-box {
+    gap: 16rem;
+    margin-top: 50px;
+  }
+
+  .search {
+    max-width: 350px;
+  }
+
+  #compteur {
+    width: 150px;
+  }
+
+  table {
+    min-width: 740px;
+    margin-top: 35px;
+  }
+
+  th,td {
+    padding: 15px 12px;
+    font-size: 14px;
   }
 }
