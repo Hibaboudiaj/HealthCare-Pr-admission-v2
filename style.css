@@ -19,7 +19,6 @@ body {
   align-items: center;
   font-size: 25px;
   padding: 2rem;
-  /* z-index: 1000; */
 }
 .header .search-container {
   width: 700px;
@@ -37,13 +36,12 @@ header h4 {
 }
 .search-container {
   display: flex;
-  /* justify-content: flex-end; */
   width: 100%;
   gap: 89px;
 }
 .search {
   height: 45px;
-  width: 400px;
+  width: 130px;
   padding: 0.8rem 1rem 0.8rem 2.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -130,9 +128,7 @@ form h2 {
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  /* max-width: 350px; */
-  width: 20%;
+  width: fit-content;
   align-items: center;
 }
 .Formulaire {
@@ -140,7 +136,6 @@ form h2 {
   margin-bottom: 1px;
   width: full;
 }
-
 label {
   margin-bottom: 5px;
   color: black;
@@ -188,11 +183,18 @@ input::placeholder {
   transform: translateY(0);
   opacity: 0.9;
 }
-
+.table-wrapper {
+  width: 95%;
+  max-width: 1200px;
+  overflow-x: auto;
+  margin-top: 50px;
+  border-radius: 0.7rem;
+  -webkit-overflow-scrolling: touch;
+}
 table {
   background-color: whitesmoke;
   border-radius: 0.7rem;
-  width: 95%;
+  width: 100%;
   max-width: 1200px;
   border-collapse: collapse;
   overflow: hidden;
@@ -230,9 +232,6 @@ td {
   color: #333;
   text-align: center;
 }
-.msgdevalidation {
-  color: red;
-}
 
 .deleteBtn {
   cursor: pointer;
@@ -252,58 +251,43 @@ td {
 
 /* Responsive Mobile */
 @media (max-width: 676px) {
-  /* Header */
   .responsive-header {
     display: flex;
     justify-content: space-between;
   }
   .header {
-    display: flex;
-    flex-direction: column;
+    height: auto;
   }
-  .search-form {
-    margin-top: 5px;
+  .top form {
+    width: 80% !important; 
+    max-width: 400px;
   }
   .search-container {
     display: flex;
-    justify-content: space-between;
-    /* width: 100%;
-    gap: 89px; */
+    justify-content: center;
   }
-  h4 {
-    font-size: 20px;
-  }
-  .top {
-    min-height: 117vh;
+  .top form{
+    width: 80% !important;
+    min-height: 60vh;
   }
   .bottom {
-    min-height: 121vh;
-  }
-  form {
-    width: 70% !important;
-  }
-  input {
-    height: 50px;
-  }
-  .form-con {
-    width: 85%;
-  }
-  .form-con input {
-    width: 100%;
-  }
-  .btn {
-    height: 40px;
-  }
-  .label {
-    font-size: 50px;
-  }
-  input::placeholder {
-    font-size: 20px;
+    min-height: 90vh;
   }
   .head-box {
     display: flex;
     align-items: center;
-    gap: 9em;
-    margin-top: 100px;
+    gap: 2em;
+  }
+  .table-wrapper {
+    width: 98%;
+    overflow-x: auto;
+    margin-top: 30px;
+  }
+  th, td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+  table{
+    min-width: 700px;
   }
 }

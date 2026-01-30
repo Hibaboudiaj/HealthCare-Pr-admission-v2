@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PatientHub</title>
     <!--css file link-->
     <link rel="stylesheet" href="style.css" />
@@ -60,11 +61,6 @@
     </div>
     <!--section 1 ends-->
 
-    <section>
-      <di></di>
-      <div></div>
-    </section>
-
     <!--section 2 starts-->
     <div class="bottom">
       <section class="head-box">
@@ -82,21 +78,22 @@
           </form>
         </div>
       </section>
-
-      <table id="tableau">
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>N*Telephone</th>
-            <th>E-mail</th>
-            <th>Motif</th>
-            <th>Date</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody id="tableauBody"></tbody>
-      </table>
+      <div class="table-wrapper">
+        <table id="tableau">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>N*Telephone</th>
+              <th>E-mail</th>
+              <th>Motif</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableauBody"></tbody>
+        </table>
+      </div>
     </div>
     <!--section 2 ends-->
     <script src="script.js"></script>
