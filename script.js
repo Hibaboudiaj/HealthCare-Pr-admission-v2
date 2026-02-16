@@ -24,7 +24,7 @@ let myarray = [
     email: "yacine.cherif@test.com",
     motif: "Urgence",
     date: "2026-02-05",
-  }
+  },
 ];
 
 const nameEl = document.querySelector("#name");
@@ -63,16 +63,16 @@ form.addEventListener("submit", function (e) {
   } else {
     myarray.push(chek);
     p.textContent = "Dommande Ajouter Avec Seccès";
-    Afficher();
+    Afficher(myarray);
   }
   form.reset();
 });
 //---Function Ajouter ends---//
 
 //---Function Afficher start---//
-function Afficher() {
+function Afficher(list) {
   tablebody.innerHTML = "";
-  if (myarray.length == 0) {
+  if (!list || list.length == 0) {
     tablebody.innerHTML = `
       <tr>
         <td colspan="7" style="text-align:center; font-weight: 600">
@@ -81,7 +81,7 @@ function Afficher() {
       </tr>
     `;
   } else {
-    myarray.forEach((elm, index) => {
+    list.forEach((elm, index) => {
       let tr = document.createElement("tr");
       tr.innerHTML = `
       <td>${elm.nome}</td>
@@ -105,56 +105,28 @@ function Afficher() {
 //---Function delete start---//
 function deleteItem(index) {
   myarray.splice(index, 1);
-  Afficher();
+  Afficher(myarray);
 }
-Afficher();
+Afficher(myarray);
 //---Function delete ends---//
 
-//---Function FilterByMotif start---//
-// function FilterByMotif() {
-//   const filterValue = document.querySelector("#filterMotif").value;
-//   const rows = document.querySelectorAll("tbody tr");
-//   rows.forEach((row) => {
-//     const motif = row.cells[4];
-//     if (motif === filterValue) {
-//       row.style.display = "";
-//     } else {
-//       row.style.display = "none";
-//     }
-//   });
-// }
-//---Function FilterByMotif ends---//
-
 //---Function rechercher start---//
+const searchEl = document.querySelector("#searchInput");
 function searchPatient() {
-  const search = document.querySelector("#searchInput").value;
-  myarray.forEach((el) => {
-    const nome = el.nome;
-    const prenom = el.prenom;
-    const email = el.email;
-    const tele = el.tele;
-    if (
-      nome.includes(search) ||
-      prenom.includes(search) ||
-      tele.includes(search) ||
-      email.includes(search)
-    ) {
-      myarray = myarray.filter(
-        (element) =>
-          element.nome === nome ||
-          element.prenom === prenom ||
-          element.tele === tele ||
-          element.email === email,
-      );
-      Afficher(myarray);
-    }
+  const searchvalue = searchEl.value.toLowerCase();
+  const result = myarray.filter((element) => {
+    return (
+      element.nome.toLocaleLowerCase().includes(searchvalue) ||
+      element.prenom.toLocaleLowerCase().includes(searchvalue) ||
+      element.tele.toLocaleLowerCase().includes(searchvalue) ||
+      element.email.toLocaleLowerCase().includes(searchvalue)
+    );
   });
+  console.log(result);
+  Afficher(result);
 }
-document.querySelector(".search-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  searchPatient();
-  Afficher();
-});
+searchEl.addEventListener("input", searchPatient);
+searchPatient();
 //---Function rechercher ends---//
 
 //---Function Compteur start---//
